@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "AForm.hpp"
 
 class Bureaucrat
 {
@@ -24,5 +25,7 @@ class Bureaucrat
         Bureaucrat& operator=(const Bureaucrat &other);
         ~Bureaucrat();
         std::string Getname() const;
+        void executeForm(AForm const &form) const;
+        void signForm(AForm &sign);
         int Getgrade() const;
 };

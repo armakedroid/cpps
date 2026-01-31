@@ -1,9 +1,9 @@
-NAME = Bureaucrat
+NAME = convert
 
 CPP = c++
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS = main.cpp Bureaucrat.cpp
+SRCS = main.cpp convert.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)

@@ -10,6 +10,7 @@ std::string Bureaucrat::Getname() const
     return name;
 }
 
+
 Bureaucrat::Bureaucrat() : name("Liparit"), grade(150)
 {
     std::cout<<"Bureaucrat constructor called"<<std::endl;
@@ -45,9 +46,21 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : name(name), grade(grade)
 {
-	std::cout<<"Bureaucrat constructor called"<<std::endl;
+    std::cout<<"Bureaucrat constructor called"<<std::endl;
     if (grade < 1)
-        throw(GradeTooLowException());
-    if (grade > 150)
         throw(GradeTooHighException());
+    if (grade > 150)
+        throw(GradeTooLowException());
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    try{
+        form.beSigned(*this);
+        std::cout<< name<< " signed "<< form.getName() <<std::endl;
+    }
+    catch (std::exception &err)
+    {
+        std::cout<<name<<" couldn't sign"<<form.getName()<<err.what()<<std::endl;
+    }
 }

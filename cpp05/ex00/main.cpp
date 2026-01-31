@@ -4,10 +4,10 @@ int main()
 {
 	try
 	{
-		Bureaucrat first("Poghos", 151);
+		Bureaucrat first("Liparit", 15);
 		Bureaucrat second(first);
-		std::cout<<"Name is "<<second.getName()<<std::endl;
-		std::cout<<"Grade is "<<second.getGrade()<<std::endl;
+		std::cout<<"Name is "<<second.Getname()<<std::endl;
+		std::cout<<"Grade is "<<second.Getgrade()<<std::endl;
 	}
 	catch(const Bureaucrat::GradeTooHighException& e)
 	{
