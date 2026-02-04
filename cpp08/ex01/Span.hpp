@@ -11,6 +11,10 @@ private:
     std::deque<int> _s;
 
 public:
+    Span();
+    Span(const Span &other);
+    Span &operator=(const Span &other);
+    ~Span();
     Span(unsigned int N);
     void addNumber(int value);
     int shortestSpan();

@@ -1,6 +1,14 @@
 #include "Span.hpp"
 
 Span::Span(unsigned int N) : _a(N) {}
+Span::Span() :_a(0){}
+Span::~Span(){}
+Span& Span::operator=(const Span &other)
+{
+    if (this != &other)
+        return *this ;
+    return *this;
+}
 
 void Span::addNumber(int i)
 {
