@@ -1,7 +1,11 @@
 #pragma once
 #include <iostream>
-#include <string>
+#include <fstream>
+#include <cstdlib>
 #include <map>
+#include <cstdlib>
+#include <string>
+
 
 class BitcoinExchange
 {
@@ -10,9 +14,10 @@ class BitcoinExchange
     public:
         bool valid(const std::string &st);
         void database(const std::string& file);
+        double getRate(const std::string& date);
         void procinput(const std::string &filename);
         BitcoinExchange();
-        BitcoinExchange&operator=(BitcoinExchange& other);
-        BitcoinExchange(BitcoinExchange &other);
+        BitcoinExchange&operator=(const BitcoinExchange& other);
+        BitcoinExchange(const BitcoinExchange &other);
         ~BitcoinExchange();
 };
