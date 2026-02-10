@@ -2,6 +2,8 @@
 
 RPN::RPN(){}
 
+RPN::~RPN(){}
+
 RPN& RPN::operator=(const RPN &other)
 {
     if (this != &other)
@@ -14,14 +16,14 @@ RPN::RPN(const RPN &other)
     this->s = other.s;
 }
 
-void RPN::sol(const std::string s)
+void RPN::sol(const std::string str)
 {
-    std::stringstream ss(s);
+    std::stringstream ss(str);
     std::string tok;
     
     while(ss >> tok)
     {
-        if (tok == '-' || tok == '+' || tok == '*' || tok == '/')
+        if (tok == "-" || tok == "+" || tok == "*" || tok == "/")
         {
             if (s.size() < 2)
             {
@@ -33,11 +35,11 @@ void RPN::sol(const std::string s)
             int a = s.top();
             s.pop();
             int res;
-            if (tok == '-')
+            if (tok == "-")
                 res = a - b;
-            else if (tok == '+')
+            else if (tok == "+")
                 res = a + b;
-            else if (tok == '*')
+            else if (tok == "*")
                 res = a * b;
             else
             {
@@ -52,7 +54,7 @@ void RPN::sol(const std::string s)
         }
         else if (tok.length() == 1 && isdigit(tok[0]))
         {
-            int val = std::stoi(tok);
+            int val = tok[0] - '0';
             s.push(val);
         }
         else

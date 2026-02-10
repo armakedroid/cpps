@@ -3,11 +3,12 @@
 #include <iostream>
 #include <string>
 #include <stack>
+#include <sstream>
 
 class RPN
 {
     private:
-        stack<int> s;
+        std::stack<int> s;
     public:
         void sol(std::string sa);
         RPN();
